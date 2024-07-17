@@ -1,0 +1,12 @@
+npx create-expo-app@latest -t
+Choose a template: » Blank
+npx expo start
+rnfes is a shortcut to write default code
+
+for navigation
+npm install @react-navigation/native
+npx expo install react-native-screens react-native-safe-area-context
+npm install @react-navigation/native-stack
+expo install @react-native-async-storage/async-storage@1.24.0
+npm install react-native-maps react-native-google-places-autocomplete
+npm install react-native-reanimated react-native-gesture-handler
