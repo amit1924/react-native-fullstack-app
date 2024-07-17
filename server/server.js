@@ -17,6 +17,13 @@ app.use(express.json());
 // Routes
 app.use("/api/auth", authRoutes);
 
+app.get("/", (req, res) => {
+  res.status(200).send({
+    success: true,
+    message: "Node Server is running",
+  });
+});
+
 // Database Connection
 dbConnect();
 
