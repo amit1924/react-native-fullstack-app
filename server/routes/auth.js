@@ -11,12 +11,10 @@ const router = express.Router();
 // Register route
 router.post("/register", async (req, res) => {
   const { name, email, password } = req.body;
-  console.log(name, email, password);
 
   try {
     const existingUser = await User.findOne({ email });
     if (existingUser) {
-      console.log("User already registered");
       return res.status(401).json({ message: "User already registered" });
     }
 
@@ -26,7 +24,6 @@ router.post("/register", async (req, res) => {
     await user.save();
     res.status(201).json({ message: "User registered successfully" });
   } catch (err) {
-    console.error("Error registering user:", err);
     res.status(400).json({ error: "Error registering user" });
   }
 });
@@ -52,7 +49,6 @@ router.post("/login", async (req, res) => {
     // Sending user data along with the token
     res.json({ token, user });
   } catch (err) {
-    console.error("Error during login:", err);
     res.status(500).json({ error: "Server error" });
   }
 });
